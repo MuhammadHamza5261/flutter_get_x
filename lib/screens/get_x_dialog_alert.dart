@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+
+
 class DialogAlert extends StatefulWidget {
   const DialogAlert({super.key});
 
@@ -7,9 +10,16 @@ class DialogAlert extends StatefulWidget {
   State<DialogAlert> createState() => _DialogAlertState();
 }
 
+
 class _DialogAlertState extends State<DialogAlert> {
   @override
   Widget build(BuildContext context) {
+
+
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -41,7 +51,7 @@ class _DialogAlertState extends State<DialogAlert> {
 
 
                 );
-            
+
               },
             ),
           ),
@@ -58,7 +68,7 @@ class _DialogAlertState extends State<DialogAlert> {
                   Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
-                      borderRadius: BorderRadius.circular(30)
+                      borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
                       children: [
@@ -67,11 +77,18 @@ class _DialogAlertState extends State<DialogAlert> {
                           title: const Text('Light Theme'),
                           onTap: (){
                             Get.changeTheme(ThemeData.light());
+                            setState(() {
+
+                            });
                           },
                         ),
                         ListTile(
                           onTap: (){
+
                             Get.changeTheme(ThemeData.dark());
+                            setState(() {
+
+                            });
                           },
                           leading: const Icon(Icons.dark_mode),
                           title: const Text('Dark Theme'),
